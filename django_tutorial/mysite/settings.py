@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import os
-from typing import Literal
 
 
 # Build paths inside the project like this: BASE_DIR / "subdir".
@@ -148,21 +146,9 @@ ACCOUNT_LOGOUT_REDIRECT_URL = "/"
 
 WAGTAIL_SITE_NAME = 'John Dostal\'s Blog'
 
-STATICFILES_FINDERS = [
-   'django.contrib.staticfiles.finders.FileSystemFinder',
-   'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-]
-
-
-#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), "/static", "/static/admin"]
-
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
-
 
 STATIC_ROOT = BASE_DIR / "static"
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL: tuple[Literal['/static/'], Literal['/static/admin']] = "/static/", "/static/admin"
+STATIC_URL  = "/static/"
 
 MEDIA_ROOT = BASE_DIR / "media"
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = "/media/"
