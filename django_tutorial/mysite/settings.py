@@ -154,7 +154,7 @@ STATICFILES_FINDERS = [
 ]
 
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), "/static", "/static/admin"]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), "/static", "/static/admin"]
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
