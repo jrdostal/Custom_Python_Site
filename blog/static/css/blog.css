@@ -5,9 +5,7 @@
   padding: 20px 20px 20px 40px;
 }
 
-h1,
 .page-header h1,
-.post h2 a,
 .page-header h1 a,
 .page-header h1 a:visited,
 .page-header h1 a:active {
@@ -16,7 +14,7 @@ h1,
   text-decoration: none;
 }
 
-
+h1,
 h2,
 h3,
 h4 {
@@ -63,6 +61,7 @@ h4 {
   float: right;
   font-family: 'Lobster', cursive;
 }
+
 .top-outline-menu{
   color: #828282;
   background-color: none;
@@ -87,6 +86,7 @@ h4 {
   color: #828282;
 }
 
+.post h2 a,
 .post h2 a:visited {
   color: #828282;
 }

@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
-
 # Build paths inside the project like this: BASE_DIR / "subdir".
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -33,28 +32,13 @@ ALLOWED_HOSTS = ["localhost","127.0.0.1",".pythonanywhere.com"]
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "wagtail.contrib.forms",
-    "wagtail.contrib.redirects",
-    "wagtail.embeds",
-    "wagtail.sites",
-    "wagtail.users",
-    "wagtail.snippets",
-    "wagtail.documents",
-    "wagtail.images",
-    "wagtail.search",
-    "wagtail.admin",
-    "wagtail.models",
-    "wagtail",
-    "wagtail_modeladmin",
-    "taggit",
-    "modelcluster",
-    "blog",
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -152,10 +136,10 @@ WAGTAIL_SITE_NAME = "John Dostal\'s Blog"
 
 
 STATIC_ROOT = BASE_DIR / "static"
-STATIC_URL  = "/static/"
+STATIC_URL  = "static/"
 
 MEDIA_ROOT = BASE_DIR / "media"
-MEDIA_URL = "/media/"
+MEDIA_URL = "media/"
 
 #Don't add a trailing slash to Django-served URLs
 APPEND_SLASH = False
@@ -166,10 +150,10 @@ WAGTAIL_APPEND_SLASH = False
 
 # Use the Wagtail admin's static files
 # This is necessary for Wagtail to serve its own static files correctly.
-WAGTAILADMIN_STATIC_URL = "/static/wagtailadmin/"
+WAGTAILADMIN_STATIC_URL = "static/wagtailadmin/"
 # Use the Wagtail admin's media files
 # This is necessary for Wagtail to serve its own media files correctly.
-WAGTAILADMIN_MEDIA_URL = "/media/wagtailadmin/"
+WAGTAILADMIN_MEDIA_URL = "media/wagtailadmin/"
 
 # Prevent browsers from sniffing the content type of responses
 # This helps mitigate certain types of attacks, such as MIME sniffing.
