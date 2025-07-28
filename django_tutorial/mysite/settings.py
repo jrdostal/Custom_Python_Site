@@ -154,3 +154,24 @@ STATIC_URL  = "/static/"
 
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/media/"
+
+#Don't add a trailing slash to Django-served URLs
+APPEND_SLASH = False
+
+#Don't add a trailing slash to Wagtail-served URLs
+WAGTAIL_APPEND_SLASH = False
+
+# Ensure that the site is served with a "www" prefix
+# This is useful for SEO and consistency.
+PREPEND_WWW = True
+
+# Security settings
+# These settings help protect against common web vulnerabilities.
+
+# Prevent browsers from sniffing the content type of responses
+# This helps mitigate certain types of attacks, such as MIME sniffing.
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Redirect all HTTP traffic to HTTPS
+# This is important for security, especially in production environments.
+SECURE_SSL_REDIRECT = True

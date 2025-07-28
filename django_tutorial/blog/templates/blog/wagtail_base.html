@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load wagtailuserbar %}
 
 <html lang="en">
 <head>
@@ -15,6 +16,11 @@
     <header class="page-header">
         <div class="container">
             <h1><a href="/">John Dostal's Blog</a></h1>
+            {% if user.is_authenticated %}
+                <aside class="actions">
+                    {% wagtailuserbar %}
+                </aside>
+            {% endif %}
         </div>
     </header>
     <div class="container">
