@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
-    "wagtail.contrib.modeladmin",
     "wagtail.embeds",
     "wagtail.sites",
     "wagtail.users",
@@ -52,32 +51,22 @@ INSTALLED_APPS = [
     "wagtail.search",
     "wagtail.admin",
     "wagtail",
-    "wagtail.wagtailcore",
-    "wagtail.wagtailadmin",
-    "wagtail.wagtaildocs",
-    "wagtail.wagtailsnippets",
-    "wagtail.wagtailusers",
-    "wagtail.wagtailimages",
-    "wagtail.wagtailsearch",
-    "wagtail.wagtailredirects",
-    "wagtail.wagtailforms",
     "wagtail_modeladmin",
-    'compressor',
-    "modelcluster",
     "taggit",
+    "modelcluster",
     "blog",
 ]
 
 MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'wagtail.contrib.legacy.sitemiddleware.SiteMiddleware',
-    "wagtail.contrib.redirects.middleware.RedirectMiddleware",
+    "django.middleware.security.SecurityMiddleware",
+
+    "wagtail.contrib.redirects.middleware.RedirectMiddleware"
 ]
 
 ROOT_URLCONF = "mysite.urls"
@@ -159,7 +148,7 @@ LOGOUT_REDIRECT_URL = "/"
 ACCOUNT_LOGOUT_REDIRECT_URL = "/"
 
 
-WAGTAIL_SITE_NAME = 'John Dostal\'s Blog'
+WAGTAIL_SITE_NAME = "John Dostal\'s Blog'
 
 
 STATIC_ROOT = BASE_DIR / "static"
@@ -175,13 +164,23 @@ APPEND_SLASH = False
 WAGTAIL_APPEND_SLASH = False
 
 
-# Security settings
-# These settings help protect against common web vulnerabilities.
+# Use the Wagtail admin's static files
+# This is necessary for Wagtail to serve its own static files correctly.
+WAGTAILADMIN_STATIC_URL = "/static/wagtailadmin/"
+# Use the Wagtail admin's media files
+# This is necessary for Wagtail to serve its own media files correctly.
+WAGTAILADMIN_MEDIA_URL = "/media/wagtailadmin/"
 
 # Prevent browsers from sniffing the content type of responses
 # This helps mitigate certain types of attacks, such as MIME sniffing.
 SECURE_CONTENT_TYPE_NOSNIFF = True
 
-# Redirect all HTTP traffic to HTTPS
-# This is important for security, especially in production environments.
-#SECURE_SSL_REDIRECT = True
+
+# Allowed file extensions for documents in the document library.
+# This can be omitted to allow all files, but note that this may present a security risk
+# if untrusted users are allowed to upload files -
+# see https://docs.wagtail.org/en/stable/advanced_topics/deploying.html#user-uploaded-files
+WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'txt', 'xlsx', 'zip']
+
+# Reverse the default case-sensitive handling of tags
+TAGGIT_CASE_INSENSITIVE = True
