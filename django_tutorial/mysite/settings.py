@@ -148,7 +148,7 @@ LOGOUT_REDIRECT_URL = "/"
 ACCOUNT_LOGOUT_REDIRECT_URL = "/"
 
 
-WAGTAIL_SITE_NAME = "John Dostal\'s Blog'
+WAGTAIL_SITE_NAME = "John Dostal\'s Blog"
 
 
 STATIC_ROOT = BASE_DIR / "static"
