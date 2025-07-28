@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
+    "wagtail.contrib.modeladmin",
     "wagtail.embeds",
     "wagtail.sites",
     "wagtail.users",
@@ -51,8 +53,20 @@ INSTALLED_APPS = [
     "wagtail.search",
     "wagtail.admin",
     "wagtail",
+    "wagtail.wagtailcore",
+    "wagtail.wagtailadmin",
+    "wagtail.wagtaildocs",
+    "wagtail.wagtailsnippets",
+    "wagtail.wagtailusers",
+    "wagtail.wagtailimages",
+    "wagtail.wagtailsearch",
+    "wagtail.wagtailredirects",
+    "wagtail.wagtailforms",
+
+    'compressor',
     "modelcluster",
     "taggit",
+
     "blog",
 ]
 
@@ -64,6 +78,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'wagtail.wagtailcore.middleware.SiteMiddleware',
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
