@@ -1,5 +1,3 @@
-import wagtail_modeladmin
-import wagtail_modeladmin.apps
 import wagtail_modeladmin.options
 from .models import BlogPage
 
