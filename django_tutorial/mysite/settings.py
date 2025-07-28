@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.contrib.modeladmin",
@@ -62,11 +61,9 @@ INSTALLED_APPS = [
     "wagtail.wagtailsearch",
     "wagtail.wagtailredirects",
     "wagtail.wagtailforms",
-
     'compressor',
     "modelcluster",
     "taggit",
-
     "blog",
 ]
 
