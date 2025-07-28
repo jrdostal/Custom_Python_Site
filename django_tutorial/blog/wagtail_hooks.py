@@ -1,8 +1,10 @@
-from wagtail_modeladmin import ModelAdmin, modeladmin_register
+import wagtail_modeladmin
+import wagtail_modeladmin.apps
+import wagtail_modeladmin.options
 from .models import BlogPage
 
 
-class BlogPage_Admin(ModelAdmin):
+class BlogPage_Admin(wagtail_modeladmin.options.ModelAdmin):
     model = BlogPage()
     menu_icon = 'pilcrow'  # change as required
     menu_order = 200  # will put in 3rd place (000 being 1st, 100 2nd)
@@ -13,4 +15,4 @@ class BlogPage_Admin(ModelAdmin):
     search_fields = ("author", "date", "intro", "text")
 
 # Now you just need to register your customised ModelAdmin class with Wagtail
-modeladmin_register(BlogPage_Admin)
+wagtail_modeladmin.options.modeladmin_register(BlogPage_Admin)
