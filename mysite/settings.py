@@ -148,7 +148,7 @@ WAGTAIL_SITE_NAME = "John Dostal\'s Blog"
 
 
 STATICFILES_DIRS = [
-    BASE_DIR /  'static/admin', 'static/favicons', 'static/wagtailadmin', 'static/wagtaildocs', 'static/wagtailembeds',
+    BASE_DIR /  'static/admin', 'static/wagtailadmin', 'static/wagtaildocs', 'static/wagtailembeds',
     'static/wagtailimages', 'static/wagtailsnippets', 'blog/static', 'blog/static/css', 'blog/static/favicons',
 ]
 
