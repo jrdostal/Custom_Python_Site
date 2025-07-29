@@ -147,16 +147,12 @@ ACCOUNT_LOGOUT_REDIRECT_URL = "/"
 WAGTAIL_SITE_NAME = "John Dostal\'s Blog"
 
 
-STATICFILES_DIRS = [
-    BASE_DIR /  'static/admin', 'static/wagtailadmin', 'static/wagtaildocs', 'static/wagtailembeds',
-    'static/wagtailimages', 'static/wagtailsnippets', 'blog/static', 'blog/static/css', 'blog/static/favicons',
-]
 
 STATIC_ROOT = BASE_DIR / 'static'
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 
 #Don't add a trailing slash to Django-served URLs
 APPEND_SLASH = False
@@ -167,9 +163,11 @@ WAGTAIL_APPEND_SLASH = False
 
 # Use the Wagtail admin's static files
 # This is necessary for Wagtail to serve its own static files correctly.
+WAGTAILADMIN_STATIC_ROOT = BASE_DIR / "static/wagtailadmin"
 WAGTAILADMIN_STATIC_URL = "static/wagtailadmin/"
 # Use the Wagtail admin's media files
 # This is necessary for Wagtail to serve its own media files correctly.
+WAGTAILADMIN_MEDIA_ROOT = BASE_DIR / "static/wagtailadmin"
 WAGTAILADMIN_MEDIA_URL = "media/wagtailadmin/"
 
 # Prevent browsers from sniffing the content type of responses
