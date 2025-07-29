@@ -147,8 +147,13 @@ ACCOUNT_LOGOUT_REDIRECT_URL = "/"
 WAGTAIL_SITE_NAME = "John Dostal\'s Blog"
 
 
-STATIC_ROOT = BASE_DIR / "static"
-STATIC_URL  = "static/"
+STATICFILES_DIRS = [
+    BASE_DIR / 'static', 'static/admin', 'static/favicons', 'static/wagtailadmin', 'static/wagtaildocs', 'static/wagtailembeds',
+    'static/wagtailimages', 'static/wagtailsnippets', 'blog/static', 'blog/static/css', 'blog/static/favicons',
+]
+
+STATIC_ROOT = BASE_DIR / 'static'
+STATIC_URL = '/static/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
